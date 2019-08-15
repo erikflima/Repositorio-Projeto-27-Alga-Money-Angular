@@ -17,7 +17,14 @@ import { Component } from '@angular/core';
 
 export class AppComponent {
 
-  //Criando uma variavel.
+  //Criando variaveis.
   nome = 'Erik';
+  idade = 29;
 
+
+  //Criando um metodo exemplo
+  getExemplo(){
+
+    return "I'm going to Canada";
+  }
 }
