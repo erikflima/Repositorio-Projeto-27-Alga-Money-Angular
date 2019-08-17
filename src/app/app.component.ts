@@ -17,14 +17,33 @@ import { Component } from '@angular/core';
 
 export class AppComponent {
 
-  //Criando variaveis.
-  nome = 'Erik';
-  idade = 29;
+  //Criando variaveia globais
+  nome            = 'Erik';
+  numero          = 0; 
+  conteudoDoInput ='';
 
 
-  //Criando um metodo exemplo
-  getExemplo(){
+  //Metodo que inventei
+  adicionar(){
 
-    return "I'm going to Canada";
+      this.numero = this.numero + 1;
+
+      console.log( `Adicionando ${this.nome} ${this.numero}` );
   }
+
+
+   //Metodo que inventei
+   alterarNomeDoAlertAmarelo( eventoRecebido: any ){
+
+      console.log( 'Exibindo o conteudo da variavel recebida: ' );
+      
+      console.log( eventoRecebido );
+
+
+      //Pegando o valor que estava dentro da tag 'input' que chamou o metodo.
+      this.conteudoDoInput = eventoRecebido.target.value;
+
+  } 
+
+
 }

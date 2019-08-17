@@ -1,18 +1,40 @@
-  <h1>
+<div class="container">
 
-    <!-- Pegando a variavel 'nome' la do arquivo 'app.component.ts'-->
-    My name is {{nome}} 
-    <br><br>
 
-     <!-- Pegando a variavel 'idade' la do arquivo 'app.component.ts'-->   
-    I'm {{idade}} years old
-    <br><br>
+    <label><h2>Aprendendo a chamar metodos apartir dos elementos da pagina</h2></label>
 
-    <!-- Fazendo uma conta simples -->    
-    Calculo: {{100 + 7}}
-    <br><br>
 
-    <!-- Chamando um metodo la do arquivo 'app.component.ts'-->      
-    Mensagem: {{ getExemplo() }}    
 
-  </h1>
+  <div class="form-group">
+
+    
+    <div class="alert alert-success" role="alert">
+        Conteudo da variavel 'nome': <strong>{{nome}}</strong>
+    </div>
+
+    <br>
+      
+    <!-- Ao digitar algo dentro do input, o metodo 'alterarNome' eh disparado. -->
+    <input type="text" class="form-control"  (input)="alterarNomeDoAlertAmarelo($event)" >
+ 
+    <br>
+
+    <!-- Texto com fundo amarelo -->
+    <div class="alert alert-warning" role="alert">{{conteudoDoInput}}</div>  
+
+  </div>
+
+  <br><br>
+
+  <!-- Esse botao chama o metodo 'adicionar()' que esta definido la no 'app.component.ts'. Lembrado que 'on-clic' um atributo do Angular e nao do javascript. -->
+  <button type="button" class="btn btn-primary" on-click="adicionar()" >Executa o metodo 'adicionar()'</button>
+
+
+  <!-- Esse botao chama o metodo 'adicionar()' que esta definido la no 'app.component.ts'. Lembrado que '(click)' um atributo do Angular e nao do javascript. -->
+  <button type="button" class="btn btn-success" (click)="adicionar()">Executa o metodo 'adicionar()</button>
+
+ 
+
+</div>
+  
+  
