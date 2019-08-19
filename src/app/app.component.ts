@@ -18,26 +18,37 @@ import { Component } from '@angular/core';
 export class AppComponent {
 
   //Criando variaveia globais
-  teste ='';
-
-
-  //Metodo que inventei
-  adicionar1( nomeDoElementoRecebido: any ){
-
+  conteudoDoPrimeiroInput = '';
+  conteudoDoSegundoInput  = '';
  
-      console.log( "Conteúdo do parametro recebido: "); 
-      console.log( nomeDoElementoRecebido ); //Esse comando vai exibir literalmente o codigo html do elemento.
-
-      console.log( "Valor do parametro recebido: "    +nomeDoElementoRecebido.value );
-  }
-
 
 
    //Metodo que inventei
-   adicionar2( nomeInputRecebido: string ){
+   alterarValorDoConteudoDoPrimeiroInput( eventoRecebido: any){
 
-    console.log( "Conteúdo do parametro recebido: " +nomeInputRecebido );
-}
+    this.conteudoDoPrimeiroInput = eventoRecebido.target.value;
+   }
+
+
+
+   alterarValorDoConteudoDoSegundoInput( eventoRecebido: any){
+
+    this.conteudoDoSegundoInput = eventoRecebido.target.value; 
+   }
+
+
+    //Metodo que inventei
+    imprimirMensagemNoConsole1(){
+
+      console.log( "Botao azul foi pressionado" );
+    }
+
+
+    //Metodo que inventei
+    imprimirMensagemNoConsole2(){
+
+      console.log( "Botao verde foi pressionado" );
+    }
 
 
 }

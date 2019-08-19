@@ -1,47 +1,42 @@
 <div class="container">
 
 
-    <h1>Aula de "Reference variables"</h1>
-    <br><br>
-
+    <h1>Aprendendo a usar "Property binding"</h1> 
+    <h3>"Property binding" é definir o valor de um atributo de uma tag, por expressao.<br>
+    No exemplo abaixo, estou usando uma expressao para habilitar e desabilitar os botoes, baseados o valor deu uma variavel.</h3><br><br>
 
   <!-- Formulario 1--->
   <div class="form-group">
 
-    <label><h2>Aprendendo a passar a referencia de um elemento para um metodo</h2></label>
-    <br>
+    <label><h2>O botão azul só fica habilitado quando algo é digitado no campo de texto</h2></label> <br>
 
-    <!--  -->
-    <input type="text" class="form-control" #elementoTagInput1  >
- 
-    <br>
+    <!-- Ao digitar algo dentro do input, o metodo 'alterarValorDoConteudoDoPrimeiroInput()' eh disparado. -->
+    <input type="text" class="form-control" (input)="alterarValorDoConteudoDoPrimeiroInput($event)" > <br>
 
-    <!-- Esse botao chama o metodo 'adicionar1()' que esta definido la no 'app.component.ts'. Lembrado que 'on-click' um atributo do Angular e nao do javascript. 
-         Dei o nome "elementoTagInput1" para a tag input. Ai posso passar esse nome para o metodo, eh como se eu tivesse passando uma referencia da tag input, e com essa referencia eu posso manipular a tag inteira. Daora. -->
-    <button type="button" class="btn btn-primary" on-click="adicionar1( elementoTagInput1 )" >Executa o metodo 'adicionar1()' do arquivo 'app.component.ts'</button>
+    <!-- Ao clicar no botao o metodo "imprimirMensagemNoConsole1()"  eh executado,
+         Se o conteudo da variavel "conteudoDoPrimeiroInput" for vazio, entao o botao sera desabilitado -->
+    <button type="button" class="btn btn-primary" on-click="imprimirMensagemNoConsole1()" bind-disabled="conteudoDoPrimeiroInput.length == 0" >Imprime mensagem no console</button>
 
   </div>
 
-
-
   <br><hr><br>
-
- 
+  
+  
   <!-- Formulario 2--->
   <div class="form-group">
 
 
-    <label><h2>Aprendendo a passar o valor de um elemento para um metodo</h2></label>
+    <label><h2>O botão verde só fica habilitado quando algo é digitado no campo de texto</h2></label>
     <br>
 
-    <!--  -->
-    <input type="text" class="form-control" #elementoTagInput2  >
+    <!-- Ao digitar algo dentro do input, o metodo 'alterarValorDoConteudoDoSegundoInput()' eh disparado. -->
+    <input type="text" class="form-control" (input)="alterarValorDoConteudoDoSegundoInput($event)" >
       
     <br>  
 
-    <!-- Esse botao chama o metodo 'adicionar2()' que esta definido la no 'app.component.ts'. Lembrado que '(click)' eh um atributo do Angular e nao do javascript. 
-         Dei o nome "elementoTagInput2" para a tag input. Ai posso passar o valor desse elemento para o metodo, ou seja, o valor digitado no input. -->
-    <button type="button" class="btn btn-success" (click)="adicionar2( elementoTagInput2.value )">Executa o metodo 'adicionar2()' do arquivo 'app.component.ts'</button>
+    <!-- Ao clicar no botao o metodo "imprimirMensagemNoConsole2()"  eh executado,
+        Se o conteudo da variavel "conteudoDoSegundoInput" for vazio, entao o botao sera desabilitado -->
+    <button type="button" class="btn btn-success" on-click="imprimirMensagemNoConsole2()" [disabled]="conteudoDoSegundoInput.length == 0" >Imprime mensagem no console</button>
 
   </div>
  
