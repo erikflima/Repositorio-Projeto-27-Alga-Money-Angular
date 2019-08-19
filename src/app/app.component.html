@@ -1,40 +1,49 @@
 <div class="container">
 
 
-    <label><h2>Aprendendo a chamar metodos apartir dos elementos da pagina</h2></label>
+    <h1>Aula de "Reference variables"</h1>
+    <br><br>
 
 
-
+  <!-- Formulario 1--->
   <div class="form-group">
 
-    
-    <div class="alert alert-success" role="alert">
-        Conteudo da variavel 'nome': <strong>{{nome}}</strong>
-    </div>
-
+    <label><h2>Aprendendo a passar a referencia de um elemento para um metodo</h2></label>
     <br>
-      
-    <!-- Ao digitar algo dentro do input, o metodo 'alterarNome' eh disparado. -->
-    <input type="text" class="form-control"  (input)="alterarNomeDoAlertAmarelo($event)" >
+
+    <!--  -->
+    <input type="text" class="form-control" #elementoTagInput1  >
  
     <br>
 
-    <!-- Texto com fundo amarelo -->
-    <div class="alert alert-warning" role="alert">{{conteudoDoInput}}</div>  
+    <!-- Esse botao chama o metodo 'adicionar1()' que esta definido la no 'app.component.ts'. Lembrado que 'on-click' um atributo do Angular e nao do javascript. 
+         Dei o nome "elementoTagInput1" para a tag input. Ai posso passar esse nome para o metodo, eh como se eu tivesse passando uma referencia da tag input, e com essa referencia eu posso manipular a tag inteira. Daora. -->
+    <button type="button" class="btn btn-primary" on-click="adicionar1( elementoTagInput1 )" >Executa o metodo 'adicionar1()' do arquivo 'app.component.ts'</button>
 
   </div>
 
-  <br><br>
-
-  <!-- Esse botao chama o metodo 'adicionar()' que esta definido la no 'app.component.ts'. Lembrado que 'on-clic' um atributo do Angular e nao do javascript. -->
-  <button type="button" class="btn btn-primary" on-click="adicionar()" >Executa o metodo 'adicionar()'</button>
 
 
-  <!-- Esse botao chama o metodo 'adicionar()' que esta definido la no 'app.component.ts'. Lembrado que '(click)' um atributo do Angular e nao do javascript. -->
-  <button type="button" class="btn btn-success" (click)="adicionar()">Executa o metodo 'adicionar()</button>
+  <br><hr><br>
 
+ 
+  <!-- Formulario 2--->
+  <div class="form-group">
+
+
+    <label><h2>Aprendendo a passar o valor de um elemento para um metodo</h2></label>
+    <br>
+
+    <!--  -->
+    <input type="text" class="form-control" #elementoTagInput2  >
+      
+    <br>  
+
+    <!-- Esse botao chama o metodo 'adicionar2()' que esta definido la no 'app.component.ts'. Lembrado que '(click)' eh um atributo do Angular e nao do javascript. 
+         Dei o nome "elementoTagInput2" para a tag input. Ai posso passar o valor desse elemento para o metodo, ou seja, o valor digitado no input. -->
+    <button type="button" class="btn btn-success" (click)="adicionar2( elementoTagInput2.value )">Executa o metodo 'adicionar2()' do arquivo 'app.component.ts'</button>
+
+  </div>
  
 
 </div>
-  
-  

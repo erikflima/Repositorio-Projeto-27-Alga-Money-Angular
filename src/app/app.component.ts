@@ -18,32 +18,26 @@ import { Component } from '@angular/core';
 export class AppComponent {
 
   //Criando variaveia globais
-  nome            = 'Erik';
-  numero          = 0; 
-  conteudoDoInput ='';
+  teste ='';
 
 
   //Metodo que inventei
-  adicionar(){
+  adicionar1( nomeDoElementoRecebido: any ){
 
-      this.numero = this.numero + 1;
+ 
+      console.log( "Conteúdo do parametro recebido: "); 
+      console.log( nomeDoElementoRecebido ); //Esse comando vai exibir literalmente o codigo html do elemento.
 
-      console.log( `Adicionando ${this.nome} ${this.numero}` );
+      console.log( "Valor do parametro recebido: "    +nomeDoElementoRecebido.value );
   }
 
 
+
    //Metodo que inventei
-   alterarNomeDoAlertAmarelo( eventoRecebido: any ){
+   adicionar2( nomeInputRecebido: string ){
 
-      console.log( 'Exibindo o conteudo da variavel recebida: ' );
-      
-      console.log( eventoRecebido );
-
-
-      //Pegando o valor que estava dentro da tag 'input' que chamou o metodo.
-      this.conteudoDoInput = eventoRecebido.target.value;
-
-  } 
+    console.log( "Conteúdo do parametro recebido: " +nomeInputRecebido );
+}
 
 
 }
