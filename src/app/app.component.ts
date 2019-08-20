@@ -18,21 +18,18 @@ import { Component } from '@angular/core';
 export class AppComponent {
 
   //Criando variaveia globais
-  conteudoDoPrimeiroInput = '';
-  conteudoDoSegundoInput  = '';
- 
+  conteudoDoPrimeiroInput  = '';
+  conteudoDoSegundoInput   = '';
+  conteudoDoTerceiroInput  = '';
 
 
-   //Metodo que inventei
-   alterarValorDoConteudoDoPrimeiroInput( eventoRecebido: any){
-
-    this.conteudoDoPrimeiroInput = eventoRecebido.target.value;
-   }
 
 
    //Metodo que inventei
    alterarValorDoConteudoDoSegundoInput( eventoRecebido: any){
 
+    console.log( "\nConteudo do parametro recebido:" );
+    console.log( eventoRecebido );
     this.conteudoDoSegundoInput = eventoRecebido.target.value; 
    }
 
@@ -53,4 +50,10 @@ export class AppComponent {
     }
 
 
+    //Metodo que inventei
+    imprimirMensagemNoConsole3(){
+
+      console.log( "\nBotao amarelo foi pressionado" );
+      console.log( "Valor da variavel 'conteudoDoTerceiroInput': " +this.conteudoDoTerceiroInput );
+    }
 }

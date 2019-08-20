@@ -1,18 +1,23 @@
 <div class="container">
 
 
-    <h1>Aprendendo a usar "Property binding"</h1> 
-    <h3>"Property binding" é definir o valor de um atributo de uma tag, por expressao.<br>
-    No exemplo abaixo, estou usando uma expressao para habilitar e desabilitar os botoes, baseados o valor deu uma variavel.</h3><br><br>
+    <h1>Aprendendo a usar "Property binding" e "Two-way data binding"</h1><br>
+
+    <h3>
+    "Property binding" é definir o valor de um atributo de uma tag, por expressao.<br>
+    Obs: Nos exemplo abaixo, estou usando uma expressao para habilitar e desabilitar os botoes, baseados o valor deu uma variavel.<br><br>
+
+    "Two-way data binding" é usar o atributo especial [(ngModel)] para conectar o elemento com uma variavel no arquivo 'app.component.ts'.
+    </h3><br><hr><br>
 
   <!-- Formulario 1--->
   <div class="form-group">
 
     <label><h2>O botão azul só fica habilitado quando algo é digitado no campo de texto</h2></label> <br>
 
-    <!-- Ao digitar algo dentro do input, o metodo 'alterarValorDoConteudoDoPrimeiroInput()' eh disparado. 
+    <!-- Ao digitar algo dentro do input, o valor da variavel 'conteudoDoPrimeiroInput' eh alterado. 
          Digo que o atributo 'value' vai ser igual ao valor da variavel 'conteudoDoPrimeiroInput' -->
-    <input type="text" class="form-control" (input)="alterarValorDoConteudoDoPrimeiroInput($event)" bind-value="conteudoDoPrimeiroInput"> <br>
+    <input  type="text"  class="form-control"  (input)="conteudoDoPrimeiroInput = $event.target.value"  bind-value="conteudoDoPrimeiroInput"> <br>
 
     <!-- Ao clicar no botao o metodo "imprimirMensagemNoConsole1()"  eh executado,
          Se o conteudo da variavel "conteudoDoPrimeiroInput" for vazio, entao o botao sera desabilitado -->
@@ -37,9 +42,31 @@
 
     <!-- Ao clicar no botao o metodo "imprimirMensagemNoConsole2()"  eh executado,
         Se o conteudo da variavel "conteudoDoSegundoInput" for vazio, entao o botao sera desabilitado -->
-    <button type="button" class="btn btn-success" on-click="imprimirMensagemNoConsole2()" [disabled]="conteudoDoSegundoInput.length == 0" >Imprime mensagem no console</button>
+    <button type="button" class="btn btn-success" (click)="imprimirMensagemNoConsole2()" [disabled]="conteudoDoSegundoInput.length == 0" >Imprime mensagem no console</button>
 
   </div>
  
+  <br><hr><br>
+  
+  
+  <!-- Formulario 3--->
+  <div class="form-group">
+
+
+    <label><h2>O botão amarelo só fica habilitado quando algo é digitado no campo de texto</h2></label>
+    <br>
+
+    <!-- Aqui eu uso o atributo especial do angular [(ngModel)]. Esse atributo faz com que se algo for digitado no input, a variavel 'conteudoDoTerceiroInput'
+      vai assumir o valor do que foi digitado, e vice versa. Ou seja, variavel e input estao conectados. -->
+    <input type="text" class="form-control" [(ngModel)]="conteudoDoTerceiroInput" >
+      
+    <br>  
+
+    <!-- Ao clicar no botao o metodo "imprimirMensagemNoConsole2()"  eh executado,
+        Se o conteudo da variavel "conteudoDoSegundoInput" for vazio, entao o botao sera desabilitado -->
+    <button  type="button"  class="btn btn-warning"  (click)="imprimirMensagemNoConsole3()"  [disabled]="conteudoDoTerceiroInput.length == 0" >Imprime mensagem no console</button>
+
+  </div>
+
 
 </div>
