@@ -10,8 +10,9 @@
 
     <label><h2>O botão azul só fica habilitado quando algo é digitado no campo de texto</h2></label> <br>
 
-    <!-- Ao digitar algo dentro do input, o metodo 'alterarValorDoConteudoDoPrimeiroInput()' eh disparado. -->
-    <input type="text" class="form-control" (input)="alterarValorDoConteudoDoPrimeiroInput($event)" > <br>
+    <!-- Ao digitar algo dentro do input, o metodo 'alterarValorDoConteudoDoPrimeiroInput()' eh disparado. 
+         Digo que o atributo 'value' vai ser igual ao valor da variavel 'conteudoDoPrimeiroInput' -->
+    <input type="text" class="form-control" (input)="alterarValorDoConteudoDoPrimeiroInput($event)" bind-value="conteudoDoPrimeiroInput"> <br>
 
     <!-- Ao clicar no botao o metodo "imprimirMensagemNoConsole1()"  eh executado,
          Se o conteudo da variavel "conteudoDoPrimeiroInput" for vazio, entao o botao sera desabilitado -->
@@ -30,7 +31,7 @@
     <br>
 
     <!-- Ao digitar algo dentro do input, o metodo 'alterarValorDoConteudoDoSegundoInput()' eh disparado. -->
-    <input type="text" class="form-control" (input)="alterarValorDoConteudoDoSegundoInput($event)" >
+    <input type="text" class="form-control" (input)="alterarValorDoConteudoDoSegundoInput($event)"  [value]="conteudoDoSegundoInput">
       
     <br>  
 

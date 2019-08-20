@@ -30,7 +30,7 @@ export class AppComponent {
    }
 
 
-
+   //Metodo que inventei
    alterarValorDoConteudoDoSegundoInput( eventoRecebido: any){
 
     this.conteudoDoSegundoInput = eventoRecebido.target.value; 
@@ -40,14 +40,16 @@ export class AppComponent {
     //Metodo que inventei
     imprimirMensagemNoConsole1(){
 
-      console.log( "Botao azul foi pressionado" );
+      console.log( "\nBotao azul foi pressionado" );
+      console.log( "Valor da variavel 'conteudoDoPrimeiroInput': " +this.conteudoDoPrimeiroInput );
     }
 
 
     //Metodo que inventei
     imprimirMensagemNoConsole2(){
 
-      console.log( "Botao verde foi pressionado" );
+      console.log( "\nBotao verde foi pressionado" );
+      console.log( "Valor da variavel 'conteudoDoSegundoInput': " +this.conteudoDoSegundoInput );
     }
 
 
