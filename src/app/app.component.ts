@@ -24,7 +24,6 @@ export class AppComponent {
 
 
 
-
    //Metodo que inventei
    alterarValorDoConteudoDoSegundoInput( eventoRecebido: any){
 
