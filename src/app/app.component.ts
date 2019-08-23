@@ -18,41 +18,30 @@ import { Component } from '@angular/core';
 export class AppComponent {
 
   //Criando variaveia globais
-  conteudoDoPrimeiroInput  = '';
-  conteudoDoSegundoInput   = '';
-  conteudoDoTerceiroInput  = '';
+  campoNome       = 'Erik';
+  campoNumero     = 0;
+  campoAdicionado = false;
 
 
+   adicionar(){
 
-   //Metodo que inventei
-   alterarValorDoConteudoDoSegundoInput( eventoRecebido: any){
+    console.log( "\nExecutando o metodo adicionar" );
 
-    console.log( "\nConteudo do parametro recebido:" );
-    console.log( eventoRecebido );
-    this.conteudoDoSegundoInput = eventoRecebido.target.value; 
+
+    //Mundando o valor da variavel
+    this.campoAdicionado = true;
+
+
+    //Somando 1 na variavel numero
+    this.campoNumero = this.campoNumero + 1;
+
+
+    //Concatenando a variavel "campoNome" com a variavel "campoNumero"
+    this.campoNome = this.campoNome + " : " + this.campoNumero;
+
+    
+    console.log( this.campoNome );
+
    }
 
-
-    //Metodo que inventei
-    imprimirMensagemNoConsole1(){
-
-      console.log( "\nBotao azul foi pressionado" );
-      console.log( "Valor da variavel 'conteudoDoPrimeiroInput': " +this.conteudoDoPrimeiroInput );
-    }
-
-
-    //Metodo que inventei
-    imprimirMensagemNoConsole2(){
-
-      console.log( "\nBotao verde foi pressionado" );
-      console.log( "Valor da variavel 'conteudoDoSegundoInput': " +this.conteudoDoSegundoInput );
-    }
-
-
-    //Metodo que inventei
-    imprimirMensagemNoConsole3(){
-
-      console.log( "\nBotao amarelo foi pressionado" );
-      console.log( "Valor da variavel 'conteudoDoTerceiroInput': " +this.conteudoDoTerceiroInput );
-    }
 }
