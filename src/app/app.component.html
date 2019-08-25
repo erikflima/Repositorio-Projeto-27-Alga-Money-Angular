@@ -1,7 +1,7 @@
 <div class="container">
 
 
-    <h1>Aprendendo a usar as instruções "*ngIf" e colocando condicional no atributo "[hidden]"</h1><br>
+    <h1>Aprendendo a usar as instrução "*ngFor" para realizar loopings"</h1><br>
     
     <br><hr><br>
 
@@ -13,31 +13,36 @@
             
           <label>Nome</label>
 
-          <!-- 
-            - Aqui eu uso o atributo especial do angular [(ngModel)]. Esse atributo faz com que se algo for digitado no input, a variavel 'campoNome' vai assumir o valor do que foi digitado, e vice versa. Ou seja, variavel e input estao conectados.
-            - Quando o cursor do mouse estiver no input, o valor da variavel 'campoAdicionado' vai ser 'false'.
-          -->
-          <input type="text" class="form-control"  [(ngModel)]="campoNome"  (focus)="campoAdicionado = false">
+          <!--  Aqui eu uso o atributo especial do angular [(ngModel)]. Esse atributo faz com que se algo for digitado no input, a variavel 'campoNome' vai assumir o valor do que foi digitado, e vice versa. Ou seja, variavel e input estao conectados. -->
+          <input type="text" class="form-control"  [(ngModel)]="campoNome">
 
         </div>
     
         <!-- Ao clicar no botao o metodo "adicionar()"  eh executado.
              Se o conteudo da variavel "campoNome" for vazio, entao o botao sera desabilitado -->
-        <button type="button" class="btn btn-primary" (click)="adicionar()"  [disabled]="campoNome.length == 0">Adicionar</button>
+        <button type="button" class="btn btn-primary" (click)="adicionar()"  [disabled]="campoNome.length == 0">Criar card</button>
 
         <br><br>
 
-        <!-- Aqui eu uso a instrucao "*ngIf". Ai esse campo so aparece na tela se atender a condicao criada.-->        
-        <div  class="alert alert-success"  role="alert"  *ngIf="campoAdicionado == true" >
-            Valor da variavel 'campoNome' : <strong>{{campoNome}}</strong>
+      
+        <!-- Criando uma linha -->
+        <div class="row">
+
+            <!-- Definindo duas colunas 
+                 Usando a instrucao '*ngFor'. Lembrando que variavel 'arrayDeNomes' esta na classe 'app.component.ts'.  -->
+            <div class="cols-2" *ngFor="let nomeAux of arrayDeNomes">
+
+                <!-- Card que tem uma foto e um texto em logo abaixo. -->
+                <div class="card">
+                    <img src="https://randomuser.me/api/portraits/women/{{idDaPhoto}}.jpg" class="card-img-top" alt="...">
+                    <div class="card-body">{{nomeAux}}</div>
+                </div>
+      
+            </div>
+
         </div>
 
-        <br>
 
-        <!-- Aqui eu uso coloco uma condicao para o atributo 'hidden'. O elemento vai ser escondido se atender a condicao criada. -->   
-        <div  class="alert alert-warning"  role="alert" [hidden]="campoAdicionado == false" >
-            Valor da variavel 'campoNome' : <strong>{{campoNome}}</strong>
-        </div>
-    
-        
+
+
     </div>

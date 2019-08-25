@@ -18,29 +18,19 @@ import { Component } from '@angular/core';
 export class AppComponent {
 
   //Criando variaveia globais
-  campoNome       = 'Erik';
-  campoNumero     = 0;
-  campoAdicionado = false;
+  campoNome       = '';
+  arrayDeNomes    = []; //Declaracao de array
+  idDaPhoto       = 90;
 
 
    adicionar(){
 
     console.log( "\nExecutando o metodo adicionar" );
 
-
-    //Mundando o valor da variavel
-    this.campoAdicionado = true;
-
-
-    //Somando 1 na variavel numero
-    this.campoNumero = this.campoNumero + 1;
-
-
-    //Concatenando a variavel "campoNome" com a variavel "campoNumero"
-    this.campoNome = this.campoNome + " : " + this.campoNumero;
-
-    
     console.log( this.campoNome );
+
+    //Adicionando uma posicao no array. Que nesse caso eh um array de String.
+    this.arrayDeNomes.push( this.campoNome );
 
    }
 
