@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 
+
 /*
   Aqui eu defino:
    - Tags que posso usar nas paginas html. Que sao os "selectors".
@@ -7,31 +8,36 @@ import { Component } from '@angular/core';
    - CSS do codigo html das tags. Que sao os "styleUrls".x
 */
 @Component({
-
   selector:    'app-root',
   templateUrl: './app.component.html',
-  styleUrls: [ './app.component.css' ]
-
+  styleUrls:   ['./app.component.css']
 })
 
 
 export class AppComponent {
 
-  //Criando variaveia globais
-  campoNome       = '';
-  arrayDeNomes    = []; //Declaracao de array
-  idDaPhoto       = 90;
+  //Criando variaveis globais
+  ultimoId     = 0;
+  nome         = '';
+  adicionado   = false;
+  funcionarios = [];
 
 
-   adicionar(){
+  adicionar() {
 
-    console.log( "\nExecutando o metodo adicionar" );
+    console.log( `Adicionando ${this.nome}` );
 
-    console.log( this.campoNome );
+    this.adicionado = true;
 
     //Adicionando uma posicao no array. Que nesse caso eh um array de String.
-    this.arrayDeNomes.push( this.campoNome );
+    this.funcionarios.push({
 
-   }
+      id: ++this.ultimoId,
+      nome: this.nome
+
+    });
+
+  }
+
 
 }

@@ -1,48 +1,51 @@
 <div class="container">
 
 
-    <h1>Aprendendo a usar as instrução "*ngFor" para realizar loopings"</h1><br>
+    <h1>Aprendendo a usar ...</h1><br>
     
     <br><hr><br>
 
 
-    <div class="container">
 
-
-        <div class="form-group">
-            
-          <label>Nome</label>
-
-          <!--  Aqui eu uso o atributo especial do angular [(ngModel)]. Esse atributo faz com que se algo for digitado no input, a variavel 'campoNome' vai assumir o valor do que foi digitado, e vice versa. Ou seja, variavel e input estao conectados. -->
-          <input type="text" class="form-control"  [(ngModel)]="campoNome">
-
-        </div>
+    <div class="alert alert-success" role="alert" *ngIf="adicionado">
+        Funcionário adicionado: <strong>{{nome}}</strong>
+    </div>
     
-        <!-- Ao clicar no botao o metodo "adicionar()"  eh executado.
-             Se o conteudo da variavel "campoNome" for vazio, entao o botao sera desabilitado -->
-        <button type="button" class="btn btn-primary" (click)="adicionar()"  [disabled]="campoNome.length == 0">Criar card</button>
 
-        <br><br>
+    <div class="form-group">
 
-      
-        <!-- Criando uma linha -->
-        <div class="row">
+        <label>Nome</label>
 
-            <!-- Definindo duas colunas 
-                 Usando a instrucao '*ngFor'. Lembrando que variavel 'arrayDeNomes' esta na classe 'app.component.ts'.  -->
-            <div class="cols-2" *ngFor="let nomeAux of arrayDeNomes">
+        <!--  Aqui eu uso o atributo especial do angular [(ngModel)]. Esse atributo faz com que se algo for digitado no input, a variavel 'nome' vai assumir o valor do que foi digitado, e vice versa. Ou seja, variavel e input estao conectados. -->
+        <input type="text" class="form-control" [(ngModel)]="nome" (focus)="adicionado = false">
+    </div>
 
-                <!-- Card que tem uma foto e um texto em logo abaixo. -->
-                <div class="card">
-                    <img src="https://randomuser.me/api/portraits/women/{{idDaPhoto}}.jpg" class="card-img-top" alt="...">
-                    <div class="card-body">{{nomeAux}}</div>
-                </div>
-      
+
+    <!-- Ao clicar no botao o metodo "adicionar()"  eh executado.
+             Se o conteudo da variavel "nome" for vazio, entao o botao sera desabilitado -->
+    <button type="button" class="btn btn-primary" (click)="adicionar()" [disabled]="nome.length == 0">Adicionar funcionário</button>
+
+
+
+
+
+    <!-- Criando uma linha -->
+    <div class="row" style="margin-top: 20px">
+        
+
+        <!-- Definindo duas colunas 
+         Usando a instrucao '*ngFor'. Lembrando que variavel 'funcionarios' esta na classe 'app.component.ts'.  -->
+        <div class="col-2"  *ngFor="let funcionario of funcionarios">
+
+            <!-- Card que tem uma foto e um texto em logo abaixo. Classe 'card' eh do bootStrap 4 -->
+            <div class="card">
+                <img class="card-img-top" src="https://randomuser.me/api/portraits/women/{{funcionario.id}}.jpg">
+                <div class="card-block">{{funcionario.nome}}</div>
             </div>
 
         </div>
 
-
-
-
     </div>
+
+
+</div>
