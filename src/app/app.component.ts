@@ -20,7 +20,7 @@ export class AppComponent {
   ultimoId     = 0;
   nome         = '';
   adicionado   = false;
-  funcionarios = [];
+  funcionarios = [];     //Criando um array.
 
 
   adicionar() {

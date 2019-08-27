@@ -1,8 +1,8 @@
 <div class="container">
 
 
-    <h1>Aprendendo a usar ...</h1><br>
-    
+    <h1>Aprendendo a passar dados para um componente</h1><br>
+    <h3>Nesse exemplo, eu passo a variavel "funcionarioAux" para o componente 'app-funcionario-card' que criei </h3>
     <br><hr><br>
 
 
@@ -35,13 +35,11 @@
 
         <!-- Definindo duas colunas 
          Usando a instrucao '*ngFor'. Lembrando que variavel 'funcionarios' esta na classe 'app.component.ts'.  -->
-        <div class="col-2"  *ngFor="let funcionario of funcionarios">
+        <div class="col-2"  *ngFor="let funcionarioAux of funcionarios">
 
-            <!-- Card que tem uma foto e um texto em logo abaixo. Classe 'card' eh do bootStrap 4 -->
-            <div class="card">
-                <img class="card-img-top" src="https://randomuser.me/api/portraits/women/{{funcionario.id}}.jpg">
-                <div class="card-block">{{funcionario.nome}}</div>
-            </div>
+            <!-- Inserindo o componente que criei. 
+            Nesse momento eu passo a variavel "funcionarioAux" para o componente "<app-funcionario-card>" -->
+            <app-funcionario-card  [funcionarioDoCard]="funcionarioAux" ></app-funcionario-card>
 
         </div>
 
