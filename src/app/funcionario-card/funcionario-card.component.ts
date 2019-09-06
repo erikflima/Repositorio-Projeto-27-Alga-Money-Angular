@@ -20,6 +20,8 @@ export class FuncionarioCardComponent{
 
 
    //Criando variaveis globais
+
+   /*A instrucao "@Input()" faz com que essa variavel seja capaz de receber um valor vindo de outro componente. Nesse exemplo, o valor vem do arquivo "app.component.html" */
    @Input() funcionarioDoCard: any; 
 
 }

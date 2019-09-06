@@ -16,27 +16,16 @@ import { Component } from '@angular/core';
 
 export class AppComponent {
 
-  //Criando variaveis globais
-  ultimoId     = 0;
-  nome         = '';
-  adicionado   = false;
+    //Criando variaveis globais
   funcionarios = [];     //Criando um array.
 
 
-  adicionar() {
+  //Metodo 
+  aoAdicionar( funcionarioRecebido ){
 
-    console.log( `Adicionando ${this.nome}` );
-
-    this.adicionado = true;
-
-    //Adicionando uma posicao no array. Que nesse caso eh um array de String.
-    this.funcionarios.push({
-
-      id: ++this.ultimoId,
-      nome: this.nome
-
-    });
-
+    //Adicionando o parametr
+    this.funcionarios.push( funcionarioRecebido );
+    
   }
 
 

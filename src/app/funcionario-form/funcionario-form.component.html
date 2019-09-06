@@ -1,0 +1,21 @@
+
+<!-- Elemento so aparece na tela, se a variavel "adicionado" do arquivo "funcionario-form.component.ts" for `true` -->
+<div class="alert alert-success" role="alert" *ngIf="adicionado">
+    Funcionário adicionado: <strong>{{nome}}</strong>
+</div>
+
+
+<div class="form-group">
+
+    <label>Nome</label>
+
+    <!--  Aqui eu uso o atributo especial do angular [(ngModel)]. Esse atributo faz com que se algo for digitado no input, a variavel 'nome' vai assumir o valor do que foi digitado, e vice versa. 
+          Ou seja, variavel "nome" e input estao conectados. -->
+    <input type="text" class="form-control" [(ngModel)]="nome" (focus)="adicionado = false">
+    
+</div>
+
+
+<!-- Ao clicar no botao o metodo "adicionar()"  eh executado.
+         Se o conteudo da variavel "nome" for vazio, entao o botao sera desabilitado -->
+<button type="button" class="btn btn-primary" (click)="adicionar()" [disabled]="nome.length == 0">Adicionar funcionário</button>
