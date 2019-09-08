@@ -15,7 +15,7 @@ import { Component, OnInit, EventEmitter, Output } from '@angular/core';
 
 export class FuncionarioFormComponent{
 
-  //Criando variaveis globais
+  // Criando variaveis globais
   ultimoId     = 0;
   nome         = '';
   adicionado   = false;
