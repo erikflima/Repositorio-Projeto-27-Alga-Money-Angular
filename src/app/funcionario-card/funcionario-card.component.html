@@ -3,6 +3,12 @@
 <div class="card"   [ngStyle]="getEstilosCartao()" >
 
     <img class="card-img-top" src="https://randomuser.me/api/portraits/women/{{funcionarioDoCard.id}}.jpg">
-    <div class="card-block">{{funcionarioDoCard.nome}}</div>
+
+    <div class="card-block">
+
+        <!--Uso a diretiva(comando do angular) 'ngClass'. Aqui o elemento ja possui a classe 'badge', e eu chamo o metodo 'verificarSeComecaComTalLetra()' para definir se o elemento vai ter ou nao as classes  'badge-danger' e 'badge-primary'-->
+        <span class="badge" [ngClass]="{ 'badge-danger': verificarSeComecaComTalLetra(), 'badge-primary': !verificarSeComecaComTalLetra() }">{{funcionarioDoCard.nome}}</span>
+
+    </div>
 
 </div>

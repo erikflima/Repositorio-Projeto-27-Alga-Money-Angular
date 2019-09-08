@@ -37,4 +37,27 @@ export class FuncionarioCardComponent{
 
    }
 
+
+   //Metodo para propriedades css. Esse metodo nao esta sendo usado em nenhum lugar, so deixei aqui como exemplo para olhar.
+   getClassesCss() {
+
+    return ['badge', 'badge-default'];
+
+  }
+  
+  verificarSeComecaComTalLetra() {
+
+    //Declarando uma variavel boolean
+    let resposta: boolean = false;
+
+    //Verificar se o campo "nome" do objeto "funcionarioDocard" comeca ou nao com a letra 'E'
+    resposta = this.funcionarioDoCard.nome.startsWith('E');
+
+    console.log( "Resposta do metodo: " +resposta );
+
+    //True or false
+    return resposta
+  }  
+
+
 }
