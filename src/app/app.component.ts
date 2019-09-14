@@ -16,16 +16,15 @@ import { Component } from '@angular/core';
 
 export class AppComponent {
 
-    //Criando variaveis globais
-  funcionarios = [];     //Criando um array.
+  //Criando variaveis globais
+  title = 'app';
 
 
-  //Metodo 
-  aoAdicionar( funcionarioRecebido ){
 
-    //Adicionando o parametr
-    this.funcionarios.push( funcionarioRecebido );
-    
+  //Metodo
+  testeErik(){
+
+    console.log( `Erik` );
   }
 
 

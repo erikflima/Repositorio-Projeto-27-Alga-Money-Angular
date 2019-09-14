@@ -1,28 +1,24 @@
-import { BrowserModule }            from '@angular/platform-browser';
-import { FormsModule }              from '@angular/forms';
-import { NgModule }                 from '@angular/core';
-import { AppComponent }             from './app.component';
-import { FuncionarioCardComponent } from './funcionario-card/funcionario-card.component';
-import { FuncionarioFormComponent } from './funcionario-form/funcionario-form.component';
+import { BrowserModule } from '@angular/platform-browser';
+import { NgModule }      from '@angular/core';
+import { TabViewModule } from 'primeng/primeng'; //Import para poder usar as tags '<p-tabView>' e '<p-tabPanel>' da biblioteca do primeng 4 no arquivo 'app.component.html'.
+import { AppComponent }  from './app.component';
 
 
 @NgModule({
 
   declarations: [
-    AppComponent,
-    FuncionarioCardComponent,
-    FuncionarioFormComponent
+    AppComponent
   ],
 
   imports: [
     BrowserModule,
-    FormsModule
+    TabViewModule
   ],
 
   providers: [],
   bootstrap: [AppComponent]
-  
+
 })
 
-export class AppModule { 
+export class AppModule {
 }

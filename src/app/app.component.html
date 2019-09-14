@@ -1,40 +1,16 @@
-<div class="container">
+<!-- Usando um componente da biblioteca do primeNg 4. Referencia: https://www.primefaces.org/primeng-4.3.0/#/tabview -->
+<p-tabView>
 
+    <p-tabPanel header="Aba 1">
+       Content 1 - Erik :)
+    </p-tabPanel>
 
-    <h1>Aprendendo a usar css dinamico com o comando "ngclass"</h1>
-    
-    <br>
+    <p-tabPanel header="Aba 2">
+        Content 2 - Erik :)
+    </p-tabPanel>
 
-    <h3>
-        Nesse exemplo eu uso o comando (diretiva) ngClass para criar como se fosse um css dinamico.<br><br>
-        Se o nome do funcionário adicionado começar com a letra "E" (maiusculo), entao a cor do nome sera 'vermelha', se nao sera 'azul'.
-    </h3>
+    <p-tabPanel header="Aba 3">
+        Content 3 - Erik :)
+    </p-tabPanel>
 
-    <br><hr><br>
-
-    <!-- Inserindo o componente que criei.
-         Aqui é dito que a variavel "funcionarioAdicionado" que esta dentro da classe "funcionario-form.component.ts", pode acionar o metodo "aoAdicionar()" da classe "app.component.ts". 
-         Esse parametro "$event" eh a representacao do que o metodo "aoAdicionar esta recebendo de fato la no arquivo "app.component.ts".-->
-    <app-funcionario-form (funcionarioAdicionado)="aoAdicionar( $event )"></app-funcionario-form>
-
-
-
-
-    <!-- Criando uma linha -->
-    <div class="row" style="margin-top: 20px">
-        
-
-        <!-- Definindo duas colunas 
-         Usando a instrucao '*ngFor'. Lembrando que variavel 'funcionarios' esta na classe 'app.component.ts'.  -->
-        <div class="col-2"  *ngFor="let funcionarioAux of funcionarios">
-
-            <!-- Inserindo o componente que criei. 
-            Nesse momento eu passo a variavel "funcionarioAux" para o componente "<app-funcionario-card>" -->
-            <app-funcionario-card  [funcionarioDoCard]="funcionarioAux" ></app-funcionario-card>
-
-        </div>
-
-    </div>
-
-
-</div>
+</p-tabView>
