@@ -1,16 +1,43 @@
-<!-- Usando um componente da biblioteca do primeNg 4. Referencia: https://www.primefaces.org/primeng-4.3.0/#/tabview -->
-<p-tabView>
+<!-- Usando um componentes(tags) da biblioteca do primeNg 4. Referencia: https://www.primefaces.org/primeng-4.3.0/#
 
-    <p-tabPanel header="Aba 1">
-       Content 1 - Erik :)
-    </p-tabPanel>
+   <div class="ui-g">             -> Representa um componente grid do primeNg 4.
+   <div class="ui-g-12 ui-fluid"> -> Representa um item grid do primeNg 4 com 12 colunas de espacamento. 'ui-fluid' serve pra dizer que os campos dentro dessa div, vao ocupar todo espaco das 12 colunas disponíveis.
+   <input pInputText type="text"> -> Represente um input de texto primeNg 4
+   style="display: block"         -> Quebra de linha
+   <button pButton>               -> Representa um componente botao do primeNg 4.
+-->
 
-    <p-tabPanel header="Aba 2">
-        Content 2 - Erik :)
-    </p-tabPanel>
+<div class="container">
 
-    <p-tabPanel header="Aba 3">
-        Content 3 - Erik :)
-    </p-tabPanel>
 
-</p-tabView>
+  <div class="ui-g">
+
+    <div class="ui-g-12">
+      <h1>Lançamentos</h1>
+    </div>
+
+
+    <div class="ui-g-12 ui-fluid">
+      <label>Descrição</label>
+      <input pInputText type="text">
+    </div>
+
+
+    <div class="ui-g-12">
+      <label style="display: block">Vencimento</label>
+      <input pInputText type="text" style="width: 95px">
+
+      <label>até</label>
+      <input pInputText type="text" style="width: 95px">
+    </div>
+
+
+    <div class="ui-g-12">
+      <button pButton type="submit" label="Pesquisar"></button>
+    </div>
+
+
+  </div>
+
+
+</div>
