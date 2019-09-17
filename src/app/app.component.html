@@ -1,6 +1,7 @@
 <!-- Usando um componentes(tags) da biblioteca do primeNg 4. Referencia: https://www.primefaces.org/primeng-4.3.0/#
 
    <div class="ui-g">             -> Representa um componente grid do primeNg 4.
+   <div class="ui-g-12">          -> Representa um item grid do primeNg 4 com 12 colunas de espacamento.
    <div class="ui-g-12 ui-fluid"> -> Representa um item grid do primeNg 4 com 12 colunas de espacamento. 'ui-fluid' serve pra dizer que os campos dentro dessa div, vao ocupar todo espaco das 12 colunas disponíveis.
    <input pInputText type="text"> -> Represente um input de texto primeNg 4
    style="display: block"         -> Quebra de linha
@@ -38,6 +39,27 @@
 
 
   </div>
+
+
+  <div class="ui-g-12">
+
+
+    <div class="ui-g-12 ui-fluid">
+
+        <!-- Usando o array "listaDeLancamentos"-->
+        <p-dataTable [value]="listaDeLancamentos">
+            <p-column field="pessoa"         header="Coluna Pessoa"                          ></p-column>
+            <p-column field="descricao"      header="Coluna Descrição"                       ></p-column>
+            <p-column field="dataVencimento" header="Coluna Vencimento" styleClass="col-data"></p-column>
+            <p-column field="dataPagamento"  header="Coluna Pagamento"  styleClass="col-data"></p-column>
+            <p-column field="valor"          header="Coluna Valor"      styleClass="col-valor"></p-column>
+        </p-dataTable>
+
+    </div>
+
+
+  </div>
+
 
 
 </div>
