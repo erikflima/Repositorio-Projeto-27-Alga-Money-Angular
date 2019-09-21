@@ -18,10 +18,12 @@
         <div class="ui-g-12">
 
           <!--
-            fa                      = fomt-awesome
-            fa-bars                 = Icone das barrinhas
+            fa                   = font-awesome.
+            fa-bars              = Icone das barrinhas.
+            (click)              = Funcao de abrir e fechar o menu de opcoes ao clicar.
+             href="javascript:;" = Se clicar nao faz nada
           -->
-          <a class="navbar-toggle">
+          <a href="javascript:;" class="navbar-toggle" (click)="exibindoMenu = !exibindoMenu">
             <i class="fa fa-bars"></i>
           </a>
 
@@ -30,9 +32,21 @@
       </div>
 
 
-
-
     </div>
+
+
+    <!-- Lista de opcoes da barra de navegacao -->
+    <ul class="navbar-menu" [hidden]="!exibindoMenu">
+        <li class="navbar-usuario" >Erik Lima</li>
+        <li class="navbar-menuitem"><a href="#">Lançamentos</a></li>
+        <li class="navbar-menuitem"><a href="#">Pessoas</a></li>
+        <li class="navbar-menuitem"><a href="#">Logout</a></li>
+    </ul>
+
+
+
+
+
 
 
   </nav>
