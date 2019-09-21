@@ -1,0 +1,15 @@
+/*padding -> Espacamento interno do elemento.
+   - 10px em cima e em baixo
+   - 0px na esquerda e na direita
+*/
+.navbar {
+  padding: 10px 0;
+  background-color: #1e94d2;
+}
+
+/*
+
+*/
+.navbar-toggle {
+  color: #fff;
+}
