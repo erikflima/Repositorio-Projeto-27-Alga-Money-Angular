@@ -1,0 +1,73 @@
+<!-- Usando um componentes(tags) da biblioteca do primeNg 4. Referencia: https://www.primefaces.org/primeng-4.3.0/#
+
+   <div class="ui-g">             -> Representa um componente grid do primeNg 4.
+   <div class="ui-g-12">          -> Representa um item grid do primeNg 4 com 12 colunas de espacamento.
+   <div class="ui-g-12 ui-fluid"> -> Representa um item grid do primeNg 4 com 12 colunas de espacamento. 'ui-fluid' serve pra dizer que os campos dentro dessa div, vao ocupar todo espaco das 12 colunas disponíveis.
+   <input pInputText type="text"> -> Represente um input de texto primeNg 4
+   style="display: block"         -> Quebra de linha
+   <button pButton>               -> Representa um componente botao do primeNg 4.
+-->
+<div class="container">
+
+  <div class="ui-g">
+
+    <div class="ui-g-12">
+      <h1>Pessoas</h1>
+    </div>
+
+    <div class="ui-g-12 ui-fluid">
+      <label>Nome</label>
+      <input pInputText type="text">
+    </div>
+
+    <div class="ui-g-12">
+      <button pButton type="submit" label="Pesquisar"></button>
+    </div>
+
+  </div>
+
+
+  <div class="ui-g">
+
+    <div class="ui-g-12">
+
+      <!-- Usando o array "pessoas"-->
+      <p-dataTable  [value]="pessoas"  [rows]="5"  [paginator]="true" [responsive]="true">
+
+          <p-column field="nome"   header="Nome"  ></p-column>
+          <p-column field="cidade" header="Cidade"></p-column>
+          <p-column field="estado" header="Estado"></p-column>
+
+          <p-column field="ativo"  header="Status">
+
+            <!-- Aqui eu pego a pessoa atual do array, assim eu posso pegar os valores que eu quiser
+                  pTemplate -> digo que vou preencher o conteudo do 'body' da linha da coluna "Coluna Status"
+            -->
+            <ng-template let-pessoaAtualDaLista="rowData" pTemplate="body">
+                <a href="javascript:;" [pTooltip]="pessoaAtualDaLista.ativo ? 'Desativar' : 'Ativar'" tooltipPosition="top">
+                  {{ pessoaAtualDaLista.ativo ? 'Ativo' : 'Inativo' }}
+                </a>
+            </ng-template>
+
+          </p-column>
+
+          <p-column header="Ações" styleClass="col-acoes">
+
+            <ng-template pTemplate="body">
+              <a      pButton icon="fa-pencil"                          pTooltip="Editar"  tooltipPosition="top"></a>
+              <button pButton icon="fa-trash"  class="ui-button-danger" pTooltip="Excluir" tooltipPosition="top"></button>
+            </ng-template>
+
+          </p-column>
+
+        </p-dataTable>
+
+      </div>
+
+    <div class="ui-g-12">
+      <a pButton label="Nova Pessoa"></a>
+    </div>
+
+  </div>
+
+</div>
