@@ -1,8 +1,40 @@
-<!--Adicionando o componente que criei. -->
-<app-navbar></app-navbar>
+<div class="container">
 
-<!--Adicionando o componente que criei. -->
-<!-- <app-lancamentos-pesquisa></app-lancamentos-pesquisa> -->
 
-<!--Adicionando o componente que criei. -->
-<app-pessoas-pesquisa></app-pessoas-pesquisa>
+    <h1>Criando uma diretiva (diretive)</h1>
+
+    <br>
+
+    <h3>
+        Nesse exemplo eu uso crio uma diretiva<br><br>
+        Uso a diretiva no campo de texto, e deixo o campo de texto com o background em amarelo.
+    </h3>
+
+    <br><hr><br>
+
+    <!-- Inserindo o componente que criei.
+         Aqui é dito que a variavel "funcionarioAdicionado" que esta dentro da classe "funcionario-form.component.ts", pode acionar o metodo "aoAdicionar()" da classe "app.component.ts".
+         Esse parametro "$event" eh a representacao do que o metodo "aoAdicionar esta recebendo de fato la no arquivo "app.component.ts".-->
+    <app-funcionario-form (funcionarioAdicionado)="aoAdicionar( $event )"></app-funcionario-form>
+
+
+
+
+    <!-- Criando uma linha -->
+    <div class="row" style="margin-top: 20px">
+
+
+        <!-- Definindo duas colunas
+         Usando a instrucao '*ngFor'. Lembrando que variavel 'funcionarios' esta na classe 'app.component.ts'.  -->
+        <div class="col-2"  *ngFor="let funcionarioAux of funcionarios">
+
+            <!-- Inserindo o componente que criei.
+            Nesse momento eu passo a variavel "funcionarioAux" para o componente "<app-funcionario-card>" -->
+            <app-funcionario-card  [funcionarioDoCard]="funcionarioAux" ></app-funcionario-card>
+
+        </div>
+
+    </div>
+
+
+</div>

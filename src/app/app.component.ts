@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 
+
 /*
   Aqui eu defino:
    - Tags que posso usar nas paginas html. Que sao os "selectors".
@@ -14,5 +15,18 @@ import { Component } from '@angular/core';
 
 
 export class AppComponent {
+
+    //Criando variaveis globais
+  funcionarios = [];     //Criando um array.
+
+
+  //Metodo 
+  aoAdicionar( funcionarioRecebido ){
+
+    //Adicionando o parametr
+    this.funcionarios.push( funcionarioRecebido );
+    
+  }
+
 
 }
