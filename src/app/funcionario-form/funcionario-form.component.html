@@ -12,7 +12,7 @@
     <!--  [(ngModel)] -> Aqui eu uso o atributo especial do angular [(ngModel)]. Esse atributo faz com que se algo for digitado no input, a variavel 'nome' vai assumir o valor do que foi digitado, e vice versa. Ou seja, variavel "nome" e input estao conectados.
           appCampoColorido -> Diretiva que criei
     -->
-    <input type="text" class="form-control" [(ngModel)]="nome" (focus)="adicionado = false"  appCampoColorido >
+    <input type="text" class="form-control" [(ngModel)]="nome" (focus)="adicionado = false"  appCampoColorido [cor]="'green'" >
 
 </div>
 
