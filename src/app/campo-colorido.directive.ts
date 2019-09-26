@@ -1,4 +1,4 @@
-import { Directive, ElementRef, Renderer2 } from '@angular/core';
+import { Directive, ElementRef, Renderer2, HostListener } from '@angular/core';
 
 //Diretiva que criei. 'Diretivas: São instruções do angular que servem para alterar comportamento ou aparencia de algum  elemento.
 @Directive({
@@ -15,8 +15,26 @@ export class CampoColoridoDirective {
     console.log( this.referenciadorDeElemento.nativeElement );
     console.log( "\n");
 
-    //Trocando a cor de fundo do elemento que estou referenciando
-    this.renderer.setStyle( this.referenciadorDeElemento.nativeElement, 'background-color', 'yellow' );
+
   }
+
+  /*Esse metodo sera executado quando o campo "<input>" da pagina "funcionario-form.component.html" receber focus.
+    A anotacao "@HostListener" serve justamente para dizer qual o evento, como por exemplo "focus", "blur", "click", "mouseleave", entre outros. */
+  @HostListener('focus') aoGanharFoco() {
+
+    console.log( "Trocando a cor de fundo do elemento que estou referenciando para amarelo");
+    this.renderer.setStyle( this.referenciadorDeElemento.nativeElement, 'background-color', 'yellow' );
+
+  }
+
+
+  /*Esse metodo sera executado quando o campo "<input>" da pagina "funcionario-form.component.html" perder o focus.
+    A anotacao "@HostListener" serve justamente para dizer qual o evento, como por exemplo "focus", "blur", "click", "mouseleave", entre outros. */
+  @HostListener('blur') aoPerderFoco() {
+
+    console.log( "Trocando a cor de fundo do elemento que estou referenciando para transparent");
+    this.renderer.setStyle( this.referenciadorDeElemento.nativeElement, 'background-color', 'transparent' );
+  }
+
 
 }
