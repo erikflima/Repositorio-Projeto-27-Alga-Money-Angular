@@ -13,20 +13,20 @@ import { Component } from '@angular/core';
   styleUrls:   ['./app.component.css']
 })
 
-
 export class AppComponent {
 
-    //Criando variaveis globais
-  funcionarios = [];     //Criando um array.
+   //Criando variaveis globais
+  nome            = 'Erik Lima';
+  dataAniversario = new Date(1990, 3, 19);
+  preco           = 12855.32;
+  troco           = 0.57392;
 
 
-  //Metodo 
-  aoAdicionar( funcionarioRecebido ){
+    //Metodo
+    teste(){
 
-    //Adicionando o parametr
-    this.funcionarios.push( funcionarioRecebido );
-    
-  }
+      console.log( "Test");
+    }
 
 
 }

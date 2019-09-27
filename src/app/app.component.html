@@ -1,45 +1,30 @@
 <div class="container">
 
 
-    <h1>Criando uma diretiva (diretive)</h1>
+
+    <h1>Aprendendo a usar "Pipes"</h1>
 
     <br>
 
     <h3>
-        Nesse exemplo eu uso crio uma diretiva<br><br>
-        Uso a diretiva no campo de texto, e deixo o campo de texto com o background em amarelo ao receber o foco, e
-        deixo a cor transparente quando perder o focus.
+        Pipe é uma funcionalidade de pega um valor de entrada e transforma em uma saída desejada. Ou seja, deixa a formatação como quer, que nem mascaras e tal.<br><br>
 
-        <br><br>
-
-        Obs: Diretivas: São instruções do angular que servem para alterar comportamento ou aparencia de algum  elemento.
+        Referencia de pipes que já vem instalado no Angular: https://angular.io/api?type=pipe
     </h3>
-
+        
     <br><hr><br>
 
-    <!-- Inserindo o componente que criei.
-         Aqui é dito que a variavel "funcionarioAdicionado" que esta dentro da classe "funcionario-form.component.ts", pode acionar o metodo "aoAdicionar()" da classe "app.component.ts".
-         Esse parametro "$event" eh a representacao do que o metodo "aoAdicionar esta recebendo de fato la no arquivo "app.component.ts".-->
-    <app-funcionario-form (funcionarioAdicionado)="aoAdicionar( $event )"></app-funcionario-form>
 
+  <!-- Usando o pipe 'uppercase' do angular, para exibir o conteudo da variavel em letra maiscula. -->
+  <h1>{{ nome | uppercase }}</h1>
 
+  <!-- Usando o pipe 'date' do angular,  para exibir o conteudo da variavel em um formato de data de minha preferencia. -->
+  <h1>{{ dataAniversario | date }}</h1>
 
+<!-- Usando o pipe 'number' do angular,  para exibir o conteudo da variavel em um formato numerico decimal, com virgula e ponto e tals. -->
+  <h1>{{ preco | number }}</h1>
 
-    <!-- Criando uma linha -->
-    <div class="row" style="margin-top: 20px">
-
-
-        <!-- Definindo duas colunas
-         Usando a instrucao '*ngFor'. Lembrando que variavel 'funcionarios' esta na classe 'app.component.ts'.  -->
-        <div class="col-2"  *ngFor="let funcionarioAux of funcionarios">
-
-            <!-- Inserindo o componente que criei.
-            Nesse momento eu passo a variavel "funcionarioAux" para o componente "<app-funcionario-card>" -->
-            <app-funcionario-card  [funcionarioDoCard]="funcionarioAux" ></app-funcionario-card>
-
-        </div>
-
-    </div>
-
+  <!-- Usando o pipe 'currency' do angular, para exibir o conteudo da variavel em formato de dinheiro. -->
+  <h1>{{ troco | currency }}</h1>
 
 </div>
