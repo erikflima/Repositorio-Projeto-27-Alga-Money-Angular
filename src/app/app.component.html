@@ -1,30 +1,9 @@
-<div class="container">
+<!--Adicionando o componente que criei. -->
+<app-navbar></app-navbar>
 
+<!--Adicionando o componente que criei. -->
+<app-lancamentos-pesquisa></app-lancamentos-pesquisa>
 
-
-    <h1>Aprendendo a usar "Pipes"</h1>
-
-    <br>
-
-    <h3>
-        Pipe é uma funcionalidade de pega um valor de entrada e transforma em uma saída desejada. Ou seja, deixa a formatação como quer, que nem mascaras e tal.<br><br>
-
-        Referencia de pipes que já vem instalado no Angular: https://angular.io/api?type=pipe
-    </h3>
-        
-    <br><hr><br>
-
-
-  <!-- Usando o pipe 'uppercase' do angular, para exibir o conteudo da variavel em letra maiscula. -->
-  <h1>{{ nome | uppercase }}</h1>
-
-  <!-- Usando o pipe 'date' do angular,  para exibir o conteudo da variavel em um formato de data de minha preferencia. Referencia: https://angular.io/api/common/DatePipe-->
-  <h1>{{ dataAniversario | date: 'dd/MM/y' }}</h1>
-
-<!-- Usando o pipe 'number' do angular,  para exibir o conteudo da variavel em um formato numerico decimal, com virgula e ponto e tals. Referencia: https://angular.io/api/common/DecimalPipe -->
-  <h1>{{ preco | number: '1.2-2' }}</h1>
-
-  <!-- Usando o pipe 'currency' do angular, para exibir o conteudo da variavel em formato de dinheiro. -->
-  <h1>{{ troco | currency: 'BRL':true:'1.2-2' }}</h1>
-
-</div>
+<!--Adicionando o componente que criei.
+<app-pessoas-pesquisa></app-pessoas-pesquisa>
+-->

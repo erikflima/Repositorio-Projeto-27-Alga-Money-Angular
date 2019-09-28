@@ -1,0 +1,52 @@
+<!-- Usando um componentes(tags) da biblioteca do primeNg 4. Referencia: https://www.primefaces.org/primeng-4.3.0/#
+
+   <div class="ui-g">      -> Representa um componente grid do primeNg 4.
+   <div class="ui-g-12">   -> Representa um item grid do primeNg 4 com 12 colunas de espacamento.
+   <nav>                   -> Barra de navegacao
+   <i>                     -> tag html para icone
+
+-->
+
+<nav class="navbar">
+
+    <div class="container">
+
+
+
+      <div class="ui-g">
+
+        <div class="ui-g-12">
+
+          <!--
+            fa                   = font-awesome.
+            fa-bars              = Icone das barrinhas.
+            (click)              = Funcao de abrir e fechar o menu de opcoes ao clicar.
+             href="javascript:;" = Se clicar nao faz nada
+          -->
+          <a href="javascript:;" class="navbar-toggle" (click)="exibindoMenu = !exibindoMenu">
+            <i class="fa fa-bars"></i>
+          </a>
+
+        </div>
+
+      </div>
+
+
+    </div>
+
+
+    <!-- Lista de opcoes da barra de navegacao -->
+    <ul class="navbar-menu" [hidden]="!exibindoMenu">
+        <li class="navbar-usuario" >Erik Lima</li>
+        <li class="navbar-menuitem"><a href="#">Lançamentos</a></li>
+        <li class="navbar-menuitem"><a href="#">Pessoas</a></li>
+        <li class="navbar-menuitem"><a href="#">Logout</a></li>
+    </ul>
+
+
+
+
+
+
+
+  </nav>
