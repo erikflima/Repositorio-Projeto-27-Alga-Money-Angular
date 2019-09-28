@@ -1,9 +1,44 @@
-<!--Adicionando o componente que criei. -->
-<app-navbar></app-navbar>
+<div class="container">
 
-<!--Adicionando o componente que criei. -->
-<app-lancamentos-pesquisa></app-lancamentos-pesquisa>
+    <br>
+    <h1>Aprendendo a trabalhar com formulários em angular</h1><br><br>
+    <hr>
+    <br>
 
-<!--Adicionando o componente que criei.
-<app-pessoas-pesquisa></app-pessoas-pesquisa>
--->
+  <!--
+    formulariodoErik            -> Nome que inventei para o meu formulario.
+    (ngSubmit)                  -> Instrucao do Angular para poder enviar o formulario.
+     ngForm                     -> Diz que se trata de um formulari do angular.
+     salvar( formulariodoErik ) -> Chamando o metodo salvar do arquivo "app.component.ts" e passando o formulario inteiro por parametro.
+  -->
+  <form #formulariodoErik="ngForm" (ngSubmit)="salvar( formulariodoErik )">
+
+    <div class="form-group">
+      <label class="form-control-label">Nome</label>
+      <input type="text" class="form-control">
+    </div>
+
+
+    <div class="form-group">
+      <label class="form-control-label">E-mail</label>
+      <input type="text" class="form-control">
+    </div>
+
+
+    <div class="form-group">
+      <label class="form-control-label">Profissão</label>
+
+      <select class="form-control">
+        <option value="">Selecione</option>
+        <option>Engenheiro</option>
+        <option>Dentista</option>
+      </select>
+
+    </div>
+
+    <!-- Botao para enviar o formulario. -->
+    <button type="submit" class="btn btn-primary">Salvar</button>
+
+  </form>
+
+</div>

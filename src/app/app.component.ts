@@ -1,4 +1,6 @@
+import { NgForm }    from '@angular/forms';
 import { Component } from '@angular/core';
+
 
 /*
   Aqui eu defino:
@@ -14,5 +16,20 @@ import { Component } from '@angular/core';
 
 
 export class AppComponent {
+
+  //Metodo que recebe o formulario inteiro da tela.
+  salvar(form: NgForm) {
+
+    console.log("formulario recebido pelo: ");
+    console.log( form );
+  }
+
+
+    //Metodo
+    teste(){
+
+      console.log("Test Erik");
+
+    }
 
 }
