@@ -42,6 +42,9 @@ export class AppComponent {
     console.log("Conteudo do campo e-mail: "    +formularioDaPagina.value.campoEmail     );
     console.log("Conteudo do campo profissao: " +formularioDaPagina.value.campoProfissao );
 
+    console.log("\n\n--------------Verificando se o formulario eh ou nao valido de acordo com as validacoes dos campos---------" );
+    console.log("Formulario valido: " +formularioDaPagina.valid );
+
 
     //Pegando o conteudo do formulario recebido e preenchendo o meu objeto 'cliente'
     //this.cliente.nome      = formularioDaPagina.value.campoNome;
@@ -50,6 +53,7 @@ export class AppComponent {
 
     console.log("\n\n---------------------Conteudo do cliente---------------------------" );
     console.log(this.cliente ); 
+
 
   }
 

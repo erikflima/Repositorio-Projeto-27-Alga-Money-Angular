@@ -2,6 +2,12 @@
 
     <br>
     <h1>Aprendendo a trabalhar com formulários em angular</h1><br><br>
+    <h3>Aprendendo a validar campos do formulário com comandos do Angular<br><br>
+      - Comandos "required", "email" e "minlength"<br><br>
+      - Referencia de comandos de validacao de formulario do angular: https://angular.io/api?query=valid&type=directive<br><br>
+
+    </h3>
+
     <hr>
     <br>
 
@@ -16,19 +22,19 @@
 
     <div class="form-group">
       <label class="form-control-label">Nome</label>
-      <input type="text" class="form-control"  name="campoNome" [(ngModel)]="cliente.nome"> <!-- Uso o comando '[(ngModel)]' para fazer um ''two way data bind' com o campo do formulario e o atributo do objeto 'cliente' que esta na classe 'app.component.ts'. -->
+      <input type="text" class="form-control"  name="campoNome" [(ngModel)]="cliente.nome"  required  minlength="4"> <!-- Uso o comando '[(ngModel)]' para fazer um ''two way data bind' com o campo do formulario e o atributo do objeto 'cliente' que esta na classe 'app.component.ts'. Os comandos "required" e "minlength" sao para validacao. -->
     </div>
 
 
     <div class="form-group">
       <label class="form-control-label">E-mail</label>
-      <input type="text" class="form-control"  name="campoEmail" [(ngModel)]="cliente.email"> <!-- Uso o comando '[(ngModel)]' para fazer um ''two way data bind' com o campo do formulario e o atributo do objeto 'cliente' que esta na classe 'app.component.ts'. -->
+      <input type="text" class="form-control"  name="campoEmail" [(ngModel)]="cliente.email"  required  email> <!-- Uso o comando '[(ngModel)]' para fazer um ''two way data bind' com o campo do formulario e o atributo do objeto 'cliente' que esta na classe 'app.component.ts'. Os comandos "required" e "email" sao para validacao. -->
     </div>
 
 
     <div class="form-group">
       <label class="form-control-label">Profissão</label>      
-      <select class="form-control"   name="campoProfissao"  [(ngModel)]="cliente.profissao"> <!-- Uso o comando '[(ngModel)]' para fazer um 'two way data bind' com o campo do formulario e o atributo do objeto 'cliente' que esta na classe 'app.component.ts'. -->
+      <select class="form-control"   name="campoProfissao"  [(ngModel)]="cliente.profissao"  required> <!-- Uso o comando '[(ngModel)]' para fazer um 'two way data bind' com o campo do formulario e o atributo do objeto 'cliente' que esta na classe 'app.component.ts'. O comando "required" eh para validacao. -->
 
         <option value="">Selecione</option>
         <option *ngFor="let profissaoAtual of listaDeProfissoes" [value]="profissaoAtual" >{{profissaoAtual}}</option> <!-- Looping para criar as opcoes. Obs: "value" eh o valor do campo. -->
@@ -37,7 +43,7 @@
 
     </div>
 
-    <button type="submit" class="btn btn-primary">Salvar</button> <!-- Botao para enviar o formulario. -->
+    <button type="submit" class="btn btn-primary"  [disabled]="!formulariodoErik.valid" >Salvar</button> <!-- Botao para enviar o formulario. Tambem faco uma regra para habilitar o botao apenas se o formulario estiver de acordo com a validacao dos campos. -->
 
 
   </form>
