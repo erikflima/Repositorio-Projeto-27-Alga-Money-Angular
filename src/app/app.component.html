@@ -11,6 +11,17 @@
     <hr>
     <br>
 
+    <h4>
+    Formulario esta com os campos preenchidos e com valores validos: {{formulariodoErik.valid}}
+    <br>
+    Formulario NÃO esta com os campos preenchidos e com valores validos:  {{formulariodoErik.invalid}}
+    </h4>
+
+    <!-- Exibidor de mensagem de erro-->
+    <div class="alert alert-danger" *ngIf="formulariodoErik.invalid">
+      Preencha os campos do formulario corretamente
+    </div>
+
   <!--
     formulariodoErik            -> Nome que inventei para o meu formulario.
     (ngSubmit)                  -> Instrucao do Angular para poder enviar o formulario.
