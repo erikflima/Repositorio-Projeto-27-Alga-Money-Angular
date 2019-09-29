@@ -19,7 +19,7 @@ export class AppComponent {
 
   //Array
   listaDeProfissoes = ['Programador', 'Empresário', 'Outra'];
-
+  selecaoPadrao = 'Merda';
 
   //Metodo que recebe o formulario inteiro da tela.
   salvar(formularioDaPagina: NgForm) {
