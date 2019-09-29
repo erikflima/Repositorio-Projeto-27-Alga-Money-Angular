@@ -16,32 +16,29 @@
 
     <div class="form-group">
       <label class="form-control-label">Nome</label>
-      <input type="text" class="form-control"  name="campoNome" ngModel>
+      <input type="text" class="form-control"  name="campoNome" [(ngModel)]="cliente.nome"> <!-- Uso o comando '[(ngModel)]' para fazer um ''two way data bind' com o campo do formulario e o atributo do objeto 'cliente' que esta na classe 'app.component.ts'. -->
     </div>
 
 
     <div class="form-group">
       <label class="form-control-label">E-mail</label>
-      <input type="text" class="form-control"  name="campoEmail" ngModel>
+      <input type="text" class="form-control"  name="campoEmail" [(ngModel)]="cliente.email"> <!-- Uso o comando '[(ngModel)]' para fazer um ''two way data bind' com o campo do formulario e o atributo do objeto 'cliente' que esta na classe 'app.component.ts'. -->
     </div>
 
 
     <div class="form-group">
-      <label class="form-control-label">Profissão</label>
-
-      <select class="form-control"   name="campoProfissao">
+      <label class="form-control-label">Profissão</label>      
+      <select class="form-control"   name="campoProfissao"  [(ngModel)]="cliente.profissao"> <!-- Uso o comando '[(ngModel)]' para fazer um 'two way data bind' com o campo do formulario e o atributo do objeto 'cliente' que esta na classe 'app.component.ts'. -->
 
         <option value="">Selecione</option>
-        
-        <!-- Looping para criar as opcoes. Obs: "value" eh o valor do campo. -->
-        <option *ngFor="let profissaoAtual of listaDeProfissoes" [value]="profissaoAtual" >{{profissaoAtual}}</option>
+        <option *ngFor="let profissaoAtual of listaDeProfissoes" [value]="profissaoAtual" >{{profissaoAtual}}</option> <!-- Looping para criar as opcoes. Obs: "value" eh o valor do campo. -->
 
       </select>
 
     </div>
 
-    <!-- Botao para enviar o formulario. -->
-    <button type="submit" class="btn btn-primary">Salvar</button>
+    <button type="submit" class="btn btn-primary">Salvar</button> <!-- Botao para enviar o formulario. -->
+
 
   </form>
 
