@@ -30,9 +30,12 @@
       <label class="form-control-label">Profissão</label>
 
       <select class="form-control"   name="campoProfissao" ngModel>
+
         <option value="">Selecione</option>
-        <option>Engenheiro</option>
-        <option>Dentista</option>
+        
+        <!-- Looping para criar as opcoes. Obs: "value" eh o valor do campo. -->
+        <option *ngFor="let profissaoAtual of listaDeProfissoes" [value]="profissaoAtual" >{{profissaoAtual}}</option>
+
       </select>
 
     </div>

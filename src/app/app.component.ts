@@ -17,6 +17,10 @@ import { Component } from '@angular/core';
 
 export class AppComponent {
 
+  //Array
+  listaDeProfissoes = ['Programador', 'Empresário', 'Outra'];
+
+
   //Metodo que recebe o formulario inteiro da tela.
   salvar(formularioDaPagina: NgForm) {
 
@@ -24,9 +28,9 @@ export class AppComponent {
     console.log( formularioDaPagina );
 
     console.log("\n\n------------------------------------------------------------------");
-    console.log("Conteudo do campo nome: "     +formularioDaPagina.value.campoNome      );
-    console.log("Conteud do campo e-mail: "    +formularioDaPagina.value.campoEmail     );
-    console.log("Conteud do campo profissao: " +formularioDaPagina.value.campoProfissao );
+    console.log("Conteudo do campo nome: "      +formularioDaPagina.value.campoNome      );
+    console.log("Conteudo do campo e-mail: "    +formularioDaPagina.value.campoEmail     );
+    console.log("Conteudo do campo profissao: " +formularioDaPagina.value.campoProfissao );
   }
 
 
